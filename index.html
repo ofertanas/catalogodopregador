@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coleção do Pregador - Fortaleça sua fé e transforme sua vida</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --color-primary: #4682B4; /* SteelBlue - para um tom de azul mais suave */
+            --color-primary-light: #6A9ACD; /* Light SteelBlue */
+            --color-primary-dark: #36648B; /* Darker SteelBlue */
+            --color-secondary: #DAA520; /* Goldenrod - para destaque dourado */
+            --color-secondary-light: #FFD700; /* Gold */
+            --color-secondary-dark: #B8860B; /* DarkGoldenrod */
+            --color-accent: #2E8B57; /* SeaGreen - para sucesso/CTA */
+            --color-accent-light: #3CB371; /* MediumSeaGreen */
+            --color-accent-dark: #228B22; /* ForestGreen */
+            --color-background: #1C1C1C; /* Preto mais suave */
+            --color-background-light: #EBF5FB;
+            --color-text: #FFFFFF;
+            --color-text-dark: #1A2A3A;
+            --color-text-body: #F5F5F5;
+            --color-white: #ffffff;
+            --color-black: #000000;
+            --color-gray: #f5f5f5;
+            --color-gray-dark: #e0e0e0;
+            --color-cta: #2E8B57;
+            --color-cta-hover: #228B22;
+            --color-urgency: #D32F2F; /* Dark Red - para urgência/desconto */
+            --font-title: 'Lora', serif;
+            --font-body: 'Poppins', sans-serif;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 10px 25px rgba(0, 0, 0, 0.2);
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text-body);
+            background-color: var(--color-background);
+            line-height: 1.4; /* Diminuído para espaçamento menor */
+            overflow-x: hidden;
+            background-image: url('evangelical-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-title);
+            color: var(--color-text);
+            margin-bottom: 0.8rem; /* Diminuído para espaçamento menor */
+            line-height: 1.2; /* Diminuído para espaçamento menor */
+            font-weight: 700; /* Negrito para títulos */
+        }
+
+        h1 {
+            font-size: 3.2rem; /* Aumentado para destaque */
+        }
+
+        h2 {
+            font-size: 2.8rem; /* Aumentado para destaque */
+        }
+
+        h3 {
+            font-size: 2.2rem; /* Aumentado para destaque */
+        }
+
+        p {
+            margin-bottom: 0.8rem; /* Diminuído para espaçamento menor */
+            font-weight: 500; /* Para deixar a letra mais gordinha */
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .highlight {
+            color: var(--color-primary);
+        }
+
+        .highlight-gold {
+            color: var(--color-secondary);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(26, 42, 58, 0.8), rgba(26, 42, 58, 0.95));
+            z-index: 0;
+        }
+
+        /* Header */
+        header {
+            padding: 15px 0;
+            position: relative;
+            overflow: hidden;
+            background-color: rgba(26, 42, 58, 0.9);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: var(--color-white);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-xl);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            max-width: 300px;
+            z-index: 1000;
+            animation: slideIn 0.5s ease, fadeOut 0.5s ease 5s forwards;
+            border-left: 4px solid var(--color-accent);
+        }
+
+        .notification-icon {
+            background-color: var(--color-accent);
+            color: var(--color-white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+
+        .notification-content {
+            font-size: 0.9rem;
+            color: var(--color-text-dark);
+        }
+
+        .notification-name {
+            font-weight: 600;
+        }
+
+        .notification-time {
+            color: #777;
+            font-size: 0.8rem;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        /* Floating Elements */
+        .floating-badge {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background-color: var(--color-urgency);
+            color: var(--color-white);
+            padding: 10px 15px;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            box-shadow: var(--shadow-lg);
+            z-index: 100;
+            animation: pulse 2s infinite;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .floating-badge i {
+            margin-right: 5px;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(231, 76, 60, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--color-text-body);
+            animation: fadeInUp 1s ease;
+        }
+
+        .countdown-container {
+            background-color: rgba(26, 42, 58, 0.8);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto 30px;
+            border: 1px solid var(--color-secondary);
+            box-shadow: var(--shadow-lg);
+            animation: fadeIn 1s ease;
+        }
+
+        .countdown-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--color-secondary);
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .countdown-number {
+            background-color: var(--color-secondary);
+            color: var(--color-text-dark);
+            font-size: 1.8rem;
+            font-weight: 700;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-sm);
+            margin-bottom: 5px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .countdown-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .video-container {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            border: 3px solid var(--color-secondary);
+            animation: fadeIn 1.2s ease;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* CTA Button */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+            color: var(--color-white);
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 1rem;
+            text-align: center;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: var(--radius-md);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-lg);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn::before {
+            content: ";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+            z-index: -1;
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .btn:hover::before {
+            opacity: 1;
+            animation: shine 1.5s infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -50%;
+            }
+            100% {
+                left: 150%;
+            }
+        }
+
+        .btn-large {
+            font-size: 1.2rem;
+            padding: 18px 36px;
+            border-radius: var(--radius-md);
+            margin: 2rem auto;
+            display: block;
+            max-width: 500px;
+            position: relative;
+            animation: bounceIn 1s ease;
+        }
+
+        .btn-large::after {
+            content: ";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 2px solid var(--color-accent);
+            border-radius: var(--radius-md);
+            animation: pulse 2s infinite;
+            pointer-events: none;
+        }
+
+        .btn-icon {
+            margin-right: 8px;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+            background-color: rgba(26, 42, 58, 0.9);
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 15px;
+            animation: fadeIn 1s ease;
+        }
+
+        .section-title::after {
+            content: ";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--color-secondary);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 2rem;
+        }
+
+        .benefit-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            animation: fadeInUp 1s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--color-secondary);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--color-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .benefit-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+
+        .benefit-description {
+            color: var(--color-text-body);
+            font-size: 0.95rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background-color: rgba(26, 42, 58, 0.8);
+            position: relative;
+        }
+
+        .testimonial-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-slide {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            margin: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .testimonial-content::before,
+        .testimonial-content::after {
+            content: '"';
+            font-size: 2rem;
+            color: var(--color-secondary);
+            position: absolute;
+            font-family: var(--font-title);
+        }
+
+        .testimonial-content::before {
+            top: -10px;
+            left: 0;
+        }
+
+        .testimonial-content::after {
+            bottom: -30px;
+            right: 0;
+        }
+
+        .testimonial-author {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .testimonial-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid var(--color-secondary);
+        }
+
+        .testimonial-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-role {
+            color: var(--color-primary);
+            font-size: 0.9rem;
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .testimonial-dot.active {
+            background-color: var(--color-secondary);
+        }
+
+        /* Comparison Section */
+        .comparison {
+            padding: 60px 0;
+            background-color: rgba(26, 42, 58, 0.9);
+            position: relative;
+        }
+
+        .comparison-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 2rem;
+        }
+
+        .comparison-item {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            animation: fadeInUp 1s ease;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .comparison-header {
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .comparison-content {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .comparison-price {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+
+        .comparison-description {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .comparison-item.negative .comparison-header {
+            background-color: var(--color-urgency);
+            color: var(--color-white);
+        }
+
+        .comparison-item.positive .comparison-header {
+            background-color: var(--color-accent);
+            color: var(--color-white);
+        }
+
+        .comparison-quote {
+            text-align: center;
+            font-size: 1.5rem;
+            font-family: var(--font-title);
+            font-style: italic;
+            margin: 2rem 0;
+            color: var(--color-text);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeIn 1.2s ease;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: rgba(26, 42, 58, 0.8);
+            position: relative;
+        }
+
+        .features-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            animation: fadeInLeft 1s ease;
+        }
+
+        .feature-icon {
+            color: var(--color-secondary);
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            font-size: 1.1rem;
+        }
+
+        .social-proof {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            animation: fadeIn 1.2s ease;
+        }
+
+        .social-proof-text {
+            font-size: 1.2rem;
+            color: var(--color-text);
+            margin-bottom: 1rem;
+        }
+
+        .social-proof-highlight {
+            color: var(--color-secondary);
+            font-weight: 600;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background-color: rgba(26, 42, 58, 0.9);
+            text-align: center;
+            position: relative;
+        }
+
+        .pricing-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            padding: 40px;
+            box-shadow: var(--shadow-xl);
+            border: 2px solid var(--color-secondary);
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1.2s ease;
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background-color: var(--color-urgency);
+            color: var(--color-white);
+            padding: 8px 40px;
+            font-weight: 700;
+            transform: rotate(45deg);
+            font-size: 0.9rem;
+            box-shadow: var(--shadow-md);
+            z-index: 1;
+        }
+
+        .price-original {
+            font-size: 1.5rem;
+            color: var(--color-text-body);
+            text-decoration: line-through;
+            opacity: 0.7;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .price-tag {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin: 0.5rem 0 1.5rem;
+            display: block;
+        }
+
+        .price-installment {
+            font-size: 1.2rem;
+            color: var(--color-text-body);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .price-description {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* Bonus Section */
+        .bonus {
+            padding: 60px 0;
+            background-color: rgba(26, 42, 58, 0.8);
+            position: relative;
+        }
+
+        .bonus-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .bonus-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--color-secondary);
+            animation: fadeIn 1s ease;
+        }
+
+        .bonus-item {
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: var(--transition);
+            animation: fadeInRight 1s ease;
+        }
+
+        .bonus-item:hover {
+            transform: translateX(10px);
+            border-color: var(--color-secondary);
+        }
+
+        .bonus-icon {
+            width: 60px;
+            height: 60px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .bonus-content {
+            flex: 1;
+        }
+
+        .bonus-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--color-text);
+        }
+
+        .bonus-description {
+            font-size: 0.95rem;
+            color: var(--color-text-body);
+        }
+
+        .bonus-value {
+            background-color: var(--color-secondary);
+            color: var(--color-text-dark);
+            padding: 5px 10px;
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-left: 10px;
+            white-space: nowrap;
+        }
+
+        /* Trust Section */
+        .trust {
+            padding: 40px 0;
+            background-color: rgba(26, 42, 58, 0.9);
+            text-align: center;
+            position: relative;
+        }
+
+        .trust-icons {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 1.2s ease;
+        }
+
+        .trust-icon i {
+            font-size: 2.5rem;
+            color: var(--color-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .trust-text {
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-text);
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            animation: fadeIn 1.2s ease;
+        }
+
+        .trust-badge i {
+            margin-right: 8px;
+            color: var(--color-secondary);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: rgba(26, 42, 58, 0.8);
+            position: relative;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            animation: fadeIn 1.2s ease;
+        }
+
+        .faq-question {
+            padding: 15px 20px;
+            background-color: rgba(255, 255, 255, 0.05);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--color-secondary);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .faq-answer p {
+            padding-bottom: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px; /* Adjust as needed */
+            padding: 15px 20px;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-black);
+            color: var(--color-gray);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: var(--color-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        footer a:hover {
+            color: var(--color-secondary-light);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .countdown-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .countdown-label {
+                font-size: 0.7rem;
+            }
+
+            .btn-large {
+                font-size: 1rem;
+                padding: 15px 30px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .benefit-card {
+                padding: 20px;
+            }
+
+            .testimonial-content {
+                font-size: 1rem;
+            }
+
+            .comparison-item {
+                min-width: unset;
+                width: 100%;
+            }
+
+            .pricing-box {
+                padding: 30px;
+            }
+
+            .price-tag {
+                font-size: 3rem;
+            }
+
+            .bonus-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .bonus-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+            .trust-icons {
+                gap: 30px;
+            }
+
+            .trust-badge {
+                font-size: 0.8rem;
+                padding: 8px 12px;
+            }
+
+            .faq-question {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .countdown-item {
+                gap: 5px;
+            }
+
+            .countdown-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .countdown-label {
+                font-size: 0.6rem;
+            }
+
+            .notification {
+                left: 10px;
+                right: 10px;
+                max-width: unset;
+            }
+
+            .floating-badge {
+                top: 80px;
+                right: 10px;
+                left: 10px;
+                font-size: 0.8rem;
+            }
+
+            .price-tag {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Custom styles for price display */
+        .price-section-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .price-old {
+            font-size: 2rem; /* Aumentado */
+            color: var(--color-urgency); /* Vermelho */
+            text-decoration: line-through;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .price-current {
+            font-size: 3.5rem; /* Aumentado */
+            color: var(--color-accent); /* Verde */
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .discount-badge {
+            background-color: var(--color-accent);
+            color: var(--color-white);
+            padding: 8px 15px;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="floating-badge animate__animated animate__pulse">
+        <i class="fas fa-tag"></i> Oferta Limitada!
+    </div>
+
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <img src="logo-caminho-oracao.png" alt="Logo Caminho da Oração">
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="container">
+            <h1 class="hero-title animate__animated animate__fadeInDown">
+                Aprofunde sua fé com a <span class="highlight-gold">Coleção do Pregador</span>
+            </h1>
+            <p class="hero-subtitle animate__animated animate__fadeInUp">
+                Descubra os segredos da pregação eficaz e transforme vidas através da Palavra.
+            </p>
+
+            <div class="countdown-container">
+                <h3 class="countdown-title">Oferta Expira Em:</h3>
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">00</span>
+                        <span class="countdown-label">Dias</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">Horas</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">Minutos</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">Segundos</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <video controls autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+                    <source src="https://files.catbox.moe/dlh4ct.mp4" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+            </div>
+
+            <a href="https://fairhappy.pay.yampi.com.br/r/JZ4UFDWG3Q" target="_blank" class="btn btn-large animate__animated animate__bounceIn">
+                <i class="fas fa-shopping-cart btn-icon"></i> QUERO MEU ACESSO AGORA!
+            </a>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="overlay"></div>
+        <div class="container">
+            <h2 class="section-title">O que você vai aprender com a <span class="highlight-gold">Coleção do Pregador</span></h2>
+            <div class="benefits-grid">
+                <div class="benefit-card animate__animated animate__fadeInUp">
+                    <i class="fas fa-book-open benefit-icon"></i>
+                    <h3 class="benefit-title">Domine a Exegese Bíblica</h3>
+                    <p class="benefit-description">Aprenda a interpretar as Escrituras com profundidade e precisão, extraindo o verdadeiro significado dos textos sagrados.</p>
+                </div>
+                <div class="benefit-card animate__animated animate__fadeInUp">
+                    <i class="fas fa-microphone benefit-icon"></i>
+                    <h3 class="benefit-title">Desenvolva Sermões Impactantes</h3>
+                    <p class="benefit-description">Estruture mensagens claras, relevantes e poderosas que cativam a atenção e tocam o coração dos ouvintes.</p>
+                </div>
+                <div class="benefit-card animate__animated animate__fadeInUp">
+                    <i class="fas fa-users benefit-icon"></i>
+                    <h3 class="benefit-title">Conecte-se com sua Audiência</h3>
+                    <p class="benefit-description">Descubra técnicas de comunicação que criam uma conexão genuína, tornando sua pregação memorável e transformadora.</p>
+                </div>
+                <div class="benefit-card animate__animated animate__fadeInUp">
+                    <i class="fas fa-lightbulb benefit-icon"></i>
+                    <h3 class="benefit-title">Supere o Medo de Falar em Público</h3>
+                    <p class="benefit-description">Ganhe confiança e desenvolva a oratória necessária para pregar com autoridade e paixão, sem ansiedade ou nervosismo.</p>
+                </div>
+                <div class="benefit-card animate__animated animate__fadeInUp">
+                    <i class="fas fa-cross benefit-icon"></i>
+                    <h3 class="benefit-title">Fortaleça sua Vida Espiritual</h3>
+                    <p class="benefit-description">Além das técnicas, aprofunde sua própria jornada de fé, tornando-se um pregador mais ungido e inspirado.</p>
+                </div>
+                <div class="benefit-card animate__animated animate__fadeInUp">
+                    <i class="fas fa-graduation-cap benefit-icon"></i>
+                    <h3 class="benefit-title">Prepare-se para Qualquer Ocasião</h3>
+                    <p class="benefit-description">Tenha em mãos um arsenal de conhecimentos para pregar em diferentes contextos: cultos, estudos bíblicos, eventos especiais e mais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="overlay"></div>
+        <div class="container">
+            <h2 class="section-title">O que nossos alunos dizem sobre a <span class="highlight-gold">Coleção do Pregador</span></h2>
+            <div class="testimonial-container">
+                <div class="testimonial-slide active">
+                    <p class="testimonial-content">"A Coleção do Pregador transformou a forma como preparo e entrego meus sermões. Sinto-me muito mais confiante e a Palavra tem alcançado mais corações!"</p>
+                    <div class="testimonial-author">
+                        <img src="testimonial-person1.jpg" alt="Foto de João Silva" class="testimonial-image">
+                        <span class="testimonial-name">João Silva</span>
+                        <span class="testimonial-role">Pastor e Teólogo</span>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <p class="testimonial-content">"Eu tinha muito medo de falar em público, mas com as técnicas da Coleção do Pregador, consegui superar isso e hoje prego com paixão e clareza. Recomendo a todos!"</p>
+                    <div class="testimonial-author">
+                        <img src="testimonial-person2.jpg" alt="Foto de Maria Oliveira" class="testimonial-image">
+                        <span class="testimonial-name">Maria Oliveira</span>
+                        <span class="testimonial-role">Líder de Célula</span>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <p class="testimonial-content">"A profundidade do conteúdo e a didática são incríveis. Cada módulo é uma bênção que nos capacita a pregar com excelência e unção."</p>
+                    <div class="testimonial-author">
+                        <img src="testimonial-person3.jpg" alt="Foto de Pedro Santos" class="testimonial-image">
+                        <span class="testimonial-name">Pedro Santos</span>
+                        <span class="testimonial-role">Missionário</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-nav">
+                <span class="testimonial-dot active" data-slide="0"></span>
+                <span class="testimonial-dot" data-slide="1"></span>
+                <span class="testimonial-dot" data-slide="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison">
+        <div class="overlay"></div>
+        <div class="container">
+            <h2 class="section-title">Transforme sua Pregação e sua Vida Espiritual</h2>
+            <div class="comparison-container">
+                <div class="comparison-item negative animate__animated animate__fadeInUp">
+                    <div class="comparison-header">
+                        <i class="fas fa-times-circle"></i> Antes da Coleção
+                    </div>
+                    <div class="comparison-content">
+                        <p class="comparison-description">Sermões sem profundidade ou impacto.</p>
+                        <p class="comparison-description">Dificuldade em interpretar a Bíblia.</p>
+                        <p class="comparison-description">Medo e nervosismo ao falar em público.</p>
+                        <p class="comparison-description">Falta de confiança na sua mensagem.</p>
+                        <p class="comparison-description">Pouco engajamento da congregação.</p>
+                    </div>
+                </div>
+                <div class="comparison-item positive animate__animated animate__fadeInUp">
+                    <div class="comparison-header">
+                        <i class="fas fa-check-circle"></i> Com a Coleção
+                    </div>
+                    <div class="comparison-content">
+                        <p class="comparison-description">Sermões poderosos e transformadores.</p>
+                        <p class="comparison-description">Compreensão profunda das Escrituras.</p>
+                        <p class="comparison-description">Confiança e autoridade na oratória.</p>
+                        <p class="comparison-description">Mensagens que inspiram e edificam.</p>
+                        <p class="comparison-description">Congregação engajada e impactada.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="comparison-quote animate__animated animate__fadeIn">
+                "A Palavra de Deus é viva e eficaz, e a Coleção do Pregador te capacita a entregá-la com todo o seu poder!"
+            </p>
+            <a href="https://fairhappy.pay.yampi.com.br/r/JZ4UFDWG3Q" target="_blank" class="btn btn-large animate__animated animate__bounceIn">
+                <i class="fas fa-arrow-right btn-icon"></i> QUERO TRANSFORMAR MINHA PREGAÇÃO!
+            </a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="overlay"></div>
+        <div class="container">
+            <h2 class="section-title">O que a <span class="highlight-gold">Coleção do Pregador</span> oferece:</h2>
+            <div class="features-list">
+                <div class="feature-item animate__animated animate__fadeInLeft">
+                    <i class="fas fa-check-circle feature-icon"></i>
+                    <p class="feature-text">Acesso vitalício a todo o conteúdo.</p>
+                </div>
+                <div class="feature-item animate__animated animate__fadeInLeft">
+                    <i class="fas fa-check-circle feature-icon"></i>
+                    <p class="feature-text">Módulos completos sobre exegese, homilética e oratória.</p>
+                </div>
+                <div class="feature-item animate__animated animate__fadeInLeft">
+                    <i class="fas fa-check-circle feature-icon"></i>
+                    <p class="feature-text">Exercícios práticos para fixação do aprendizado.</p>
+                </div>
+                <div class="feature-item animate__animated animate__fadeInLeft">
+                    <i class="fas fa-check-circle feature-icon"></i>
+                    <p class="feature-text">Material de apoio em PDF para download.</p>
+                </div>
+                <div class="feature-item animate__animated animate__fadeInLeft">
+                    <i class="fas fa-check-circle feature-icon"></i>
+                    <p class="feature-text">Certificado de conclusão.</p>
+                </div>
+                <div class="feature-item animate__animated animate__fadeInLeft">
+                    <i class="fas fa-check-circle feature-icon"></i>
+                    <p class="feature-text">Suporte exclusivo para dúvidas.</p>
+                </div>
+            </div>
+            <div class="social-proof animate__animated animate__fadeIn">
+                <p class="social-proof-text">
+                    Mais de <span class="social-proof-highlight">5.000 pregadores</span> já transformaram suas vidas com a Coleção do Pregador!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="overlay"></div>
+        <div class="container">
+            <h2 class="section-title">Invista na sua Capacitação Ministerial</h2>
+            <div class="pricing-box">
+                <div class="pricing-badge">OFERTA ESPECIAL</div>
+                <p class="price-original">De R$97,00 por apenas:</p>
+                <div class="price-section-container">
+                    <span class="price-old">R$97,00</span>
+                    <span class="price-current">R$10,00</span>
+                    <span class="discount-badge">89% de desconto!</span>
+                </div>
+                <p class="price-installment">Ou em 12x de R$1,00 no cartão</p>
+                <p class="price-description">Aproveite esta oportunidade única para adquirir a Coleção do Pregador e elevar o nível da sua pregação. Conteúdo completo e de alta qualidade para você impactar vidas!</p>
+                <a href="https://fairhappy.pay.yampi.com.br/r/JZ4UFDWG3Q" target="_blank" class="btn btn-large animate__animated animate__bounceIn">
+                    <i class="fas fa-shopping-cart btn-icon"></i> GARANTA SEU ACESSO AGORA!
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="bonus">
+        <div class="overlay"></div>
+        <div class="container">
+            <h2 class="section-title bonus-title">Bônus Exclusivos para Você!</h2>
+            <div class="bonus-container">
+                <div class="bonus-item animate__animated animate__fadeInRight">
+                    <img src="bonus-icon.png" alt="Bônus" class="bonus-icon">
+                    <div class="bonus-content">
+                        <h3 class="bonus-name">Bônus 1: E-book "Guia Rápido de Homilética"</h3>
+                        <p class="bonus-description">Um guia prático com os fundamentos da arte de pregar, para você ter sempre à mão.</p>
+                    </div>
+                    <span class="bonus-value">Valor: R$27,00</span>
+                </div>
+                <div class="bonus-item animate__animated animate__fadeInRight">
+                    <img src="bonus-icon.png" alt="Bônus" class="bonus-icon">
+                    <div class="bonus-content">
+                        <h3 class="bonus-name">Bônus 2: Checklist do Pregador Preparado</h3>
+                        <p class="bonus-description">Um checklist completo para garantir que você não esqueça de nada antes de subir ao púlpito.</p>
+                    </div>
+                    <span class="bonus-value">Valor: R$17,00</span>
+                </div>
+                <div class="bonus-item animate__animated animate__fadeInRight">
+                    <img src="bonus-icon.png" alt="Bônus" class="bonus-icon">
+                    <div class="bonus-content">
+                        <h3 class="bonus-name">Bônus 3: Acesso ao Grupo Exclusivo de Pregadores</h3>
+                        <p class="bonus-description">Conecte-se com outros pregadores, compartilhe experiências e receba insights valiosos.</p>
+                    </div>
+                    <span class="bonus-value">Valor: R$67,00</span>
+                </div>
+            </div>
+            <p class="text-center" style="font-size: 1.2rem; margin-top: 2rem; color: var(--color-secondary); font-weight: 700;">
+                Valor Total dos Bônus: R$111,00 - Tudo isso GRÁTIS para você!
+            </p>
+        </div>
+    </section>
+
+    <section class="trust">
+        <div class="overlay"></div>
+        <div class="container">
+            <h2 class="section-title">Sua Compra 100% Segura e Garantida</h2>
+            <div class="trust-icons">
+                <div class="trust-icon animate__animated animate__fadeIn">
+                    <i class="fas fa-lock"></i>
+                    <span class="trust-text">Ambiente Seguro</span>
+                </div>
+                <div class="trust-icon animate__animated animate__fadeIn">
+                    <i class="fas fa-shield-alt"></i>
+                    <span class="trust-text">Dados Protegidos</span>
+                </div>
+                <div class="trust-icon animate__animated animate__fadeIn">
+                    <i class="fas fa-credit-card"></i>
+                    <span class="trust-text">Pagamento Facilitado</span>
+                </div>
+                <div class="trust-icon animate__animated animate__fadeIn">
+                    <i class="fas fa-headset"></i>
+                    <span class="trust-text">Suporte Dedicado</span>
+                </div>
+            </div>
+            <div class="trust-badges">
+                <div class="trust-badge animate__animated animate__fadeIn">
+                    <i class="fas fa-check-circle"></i> Garantia de Satisfação
+                </div>
+                <div class="trust-badge animate__animated animate__fadeIn">
+                    <i class="fas fa-star"></i> Avaliação 5 Estrelas
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="overlay"></div>
+        <div class="container">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">O que é a Coleção do Pregador?</div>
+                    <div class="faq-answer">
+                        <p>A Coleção do Pregador é um treinamento completo para capacitar pastores, líderes e todos que desejam aprimorar suas habilidades de pregação e comunicação da Palavra de Deus.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Como vou acessar o conteúdo?</div>
+                    <div class="faq-answer">
+                        <p>Após a confirmação do pagamento, você receberá um e-mail com as instruções para acessar nossa plataforma exclusiva, onde todo o conteúdo estará disponível.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Por quanto tempo terei acesso?</div>
+                    <div class="faq-answer">
+                        <p>O acesso à Coleção do Pregador é vitalício! Você poderá estudar no seu ritmo, revisar o conteúdo sempre que precisar e ter acesso a todas as atualizações futuras.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Preciso ter experiência em pregação?</div>
+                    <div class="faq-answer">
+                        <p>Não! A Coleção do Pregador foi desenvolvida tanto para iniciantes quanto para pregadores experientes que desejam aprimorar suas técnicas e aprofundar seus conhecimentos.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Qual a garantia de satisfação?</div>
+                    <div class="faq-answer">
+                        <p>Temos tanta certeza da qualidade da Coleção do Pregador que oferecemos uma garantia incondicional de 7 dias. Se por qualquer motivo você não estiver satisfeito, basta solicitar o reembolso total do seu investimento.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Coleção do Pregador. Todos os direitos reservados.</p>
+            <p>
+                <a href="#">Termos de Uso</a> | <a href="#">Política de Privacidade</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        const countdownDate = new Date();
+        countdownDate.setDate(countdownDate.getDate() + 7); // 7 days from now
+
+        let countdownInterval = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.querySelector(".countdown-container").innerHTML = "<h3 class=\"countdown-title\">Oferta Encerrada!</h3>";
+            }
+        }, 1000);
+
+        // Testimonial Carousel
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".testimonial-slide");
+        const dots = document.querySelectorAll(".testimonial-dot");
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove("active");
+                dots[i].classList.remove("active");
+                if (i === index) {
+                    slide.classList.add("active");
+                    dots[i].classList.add("active");
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+
+        showSlide(currentSlide);
+        setInterval(nextSlide, 5000); // Change slide every 5 seconds
+
+        // FAQ Accordion
+        document.querySelectorAll(".faq-question").forEach(item => {
+            item.addEventListener("click", event => {
+                const faqItem = item.closest(".faq-item");
+                faqItem.classList.toggle("active");
+            });
+        });
+
+        // Random Notification
+        const names = ["Ana", "Carlos", "Beatriz", "Fernando", "Gabriela", "Lucas", "Mariana", "Rafael"];
+        const cities = ["São Paulo", "Rio de Janeiro", "Belo Horizonte", "Porto Alegre", "Curitiba", "Brasília"];
+
+        function showRandomNotification() {
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            const randomCity = cities[Math.floor(Math.random() * cities.length)];
+            const notificationTime = Math.floor(Math.random() * 10) + 1; // 1-10 minutes ago
+
+            const notificationHtml = `
+                <div class="notification animate__animated animate__fadeInLeft">
+                    <div class="notification-icon"><i class="fas fa-bell"></i></div>
+                    <div class="notification-content">
+                        <span class="notification-name">${randomName} de ${randomCity}</span>
+                        acabou de adquirir a Coleção do Pregador!
+                        <div class="notification-time">há ${notificationTime} minutos</div>
+                    </div>
+                </div>
+            `;
+
+            document.body.insertAdjacentHTML("beforeend", notificationHtml);
+
+            setTimeout(() => {
+                const currentNotification = document.querySelector(".notification");
+                if (currentNotification) {
+                    currentNotification.classList.remove("animate__fadeInLeft");
+                    currentNotification.classList.add("animate__fadeOutLeft");
+                    currentNotification.addEventListener("animationend", () => {
+                        currentNotification.remove();
+                    });
+                }
+            }, 5000); // Notification disappears after 5 seconds
+        }
+
+        setInterval(showRandomNotification, 10000); // Show a new notification every 10 seconds
+
+    </script>
+</body>
+</html>
+
